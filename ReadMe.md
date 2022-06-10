@@ -17,3 +17,5 @@ SubListener will broadcast the first genesis block for the miner(Alice and Bob) 
 <br/>
 <h4>Make sure you have filled the sub-key and pub-key on all the program.</h4><br.>
 <h4>and rename the channel1 & channel2 to the channels name you hav created on pubnub.</h4>
+<br/><br/><br/>
+<h4>Please visit https://www.pubnub.com/docs/sdks/python if pubnub is not being set-up yet</h4>
