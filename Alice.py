@@ -47,7 +47,7 @@ class MySubscribeCallback(SubscribeCallback):
             hashval = hashlib.sha256(data.encode()).hexdigest()
             the_message = {"sender": pnconfig.uuid, "content": hashval, "nonce":nonce}
             if hashval < cond:
-                envelope = pubnub.publish().channel('Channel-listenbroadcast').message(the_message).sync()
+                envelope = pubnub.publish().channel('channel1').message(the_message).sync()
                 nonce = 0
                 os.remove("AliceBlock.json")
                 break
