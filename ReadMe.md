@@ -16,4 +16,4 @@ Assuming SubListener is a program running somewhere in the cloud.<br/>
 SubListener will broadcast the first genesis block for the miner(Alice and Bob) to mine.<br/>
 <br/>
 <h4>Make sure you have filled the sub-key and pub-key on all the program.</h4><br.>
-<h4>and put the rename the channel1 & channel2 to the channel you hav created on pubnub.</h4>
+<h4>and rename the channel1 & channel2 to the channels name you hav created on pubnub.</h4>
