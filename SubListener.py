@@ -6,8 +6,8 @@ import json
 
 pnconfig = PNConfiguration()
 
-pnconfig.subscribe_key = 'sub-c-d0918375-2743-4253-a979-d5dd43baf93a'
-pnconfig.publish_key = 'pub-c-d1f1acd0-d88b-4d72-8358-579eeb4c47b2'
+pnconfig.subscribe_key = ''#your pubnub's app subscribe key
+pnconfig.publish_key = ''#your pubnub's app publish key
 pnconfig.uuid = 'Sub'
 pubnub = PubNub(pnconfig)
 
@@ -74,7 +74,7 @@ class MySubscribeCallback(SubscribeCallback):
                         fw.write(tx)
                         fw.close()
                     the_message = {"sender": pnconfig.uuid, "content": tx, "ledger_number": j+1}
-                    pubnub.publish().channel('Channel-listenmine').message(the_message).pn_async(my_publish_callback)
+                    pubnub.publish().channel('channel2').message(the_message).pn_async(my_publish_callback)
                     pf = open("block" + str(j) + ".json","r")
                     lines = pf.readlines()
                     lines[3] = "    \"Nonce\": "+str(nonce)+",\n"
@@ -100,7 +100,7 @@ class MySubscribeCallback(SubscribeCallback):
                         fw.write(tx)
                         fw.close()
                     the_message = {"sender": pnconfig.uuid, "content": tx, "ledger_number": j+1}
-                    pubnub.publish().channel('Channel-listenmine').message(the_message).pn_async(my_publish_callback)
+                    pubnub.publish().channel('channel2').message(the_message).pn_async(my_publish_callback)
                     pf = open("block" + str(j) + ".json","r")
                     lines = pf.readlines()
                     lines[3] = "    \"Nonce\": "+str(nonce)+",\n"
@@ -121,4 +121,4 @@ class MySubscribeCallback(SubscribeCallback):
             #print(str(event.message["content"]) + " hash is not valid yet; Mined by: " + str(event.message["sender"]))
 
 pubnub.add_listener(MySubscribeCallback())
-pubnub.subscribe().channels('Channel-listenbroadcast').with_presence().execute()
+pubnub.subscribe().channels('channel1').with_presence().execute()
