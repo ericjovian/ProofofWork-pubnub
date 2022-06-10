@@ -6,8 +6,8 @@ import hashlib, time, os
 
 # replace the key placeholders with your own PubNub publish and subscribe keys
 pnconfig = PNConfiguration()
-pnconfig.subscribe_key = 'sub-c-d0918375-2743-4253-a979-d5dd43baf93a'
-pnconfig.publish_key = 'pub-c-d1f1acd0-d88b-4d72-8358-579eeb4c47b2'
+pnconfig.subscribe_key = #your pubnub's app subscribe key
+pnconfig.publish_key = #your pubnub's app publish key
 pnconfig.uuid = "Alice"
 
 pubnub = PubNub(pnconfig)
@@ -62,4 +62,4 @@ class MySubscribeCallback(SubscribeCallback):
                 file.close()
 
 pubnub.add_listener(MySubscribeCallback())
-pubnub.subscribe().channels('Channel-listenmine').with_presence().execute()
+pubnub.subscribe().channels("channel2").with_presence().execute()
